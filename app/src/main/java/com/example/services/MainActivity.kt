@@ -30,6 +30,12 @@ class MainActivity : AppCompatActivity() {
             // stop service inside-->
             // stopService(MyForegroundService.getIntent(this))
         }
+
+        binding.intentService.setOnClickListener {
+            ContextCompat.startForegroundService(this,
+                MyIntentService.getIntent(this)
+            )
+        }
     }
 
 }
